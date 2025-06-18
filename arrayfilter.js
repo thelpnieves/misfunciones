@@ -2,19 +2,50 @@
 
 const productos = [
   
- { nombre: "cartulina", existencia: true},
- {nombre: "lapices", existencia: true},
- { nombre: "plastilina", existencia: false},
- { nombre: "boligrafo", existencia: true},
- { nombre: "escuadra", existencia: false},
- { nombre: "transportador", existencia: true},
- { nombre: "block", existencia: false},
- { nombre: "cinta", existencia: true},
- { nombre: "cuaderno", existencia: false}
+ { nombre: "cartulina", inventario: 5},
+ { nombre: "lapices", inventario: 6},
+ { nombre: "plastilina", inventario: 0},
+ { nombre: "boligrafo", inventario: 4},
+ { nombre: "escuadra", inventario: 0},
+ { nombre: "transportador", inventario:7},
+ { nombre: "block", inventario: 0},
+ { nombre: "cinta", inventario: 5},
+ { nombre: "cuaderno", inventario: 8}
      
 ];
+console.log(productos);
+
+
+
+// filtra productos diferentes de cero e iguales a 0
+
+const productoExistencias = productos.filter(function(producto) {
+  if(producto.inventario > 0) {
+    return true;
+  }
+ });
+ console.log(productoExistencias);
+
+ const productosInexistentes = productos.filter(function(producto) {
+  if(producto.inventario === 0) {
+    return true;
+  }
+ });
+ console.log(productosInexistentes);
+
+
+
+
+
+
+
+
+
+
 //filtra solo los productos disponibles true
-const productosDisponibles = productos.filter(producto => producto.existencia == true);
+const productosDisponibles = productos.filter(producto => { 
+  return producto.existencia == true
+});
 console.log(productosDisponibles);
 
 //Muestra unicament los productos filtrados en un string
