@@ -15,8 +15,6 @@ const productos = [
 ];
 console.log(productos);
 
-
-
 // filtra productos diferentes de cero e iguales a 0
 
 const productoExistencias = productos.filter(function(producto) {
